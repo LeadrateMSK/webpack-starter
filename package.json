@@ -1,6 +1,6 @@
 {
   "name": "webpack-starter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Стартовый шаблон Webpack, основанный на laravel-mix",
   "main": "index.js",
   "scripts": {
@@ -25,14 +25,25 @@
   },
   "homepage": "https://github.com/LeadrateMSK/webpack-starter#readme",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.9.0",
+    "@typescript-eslint/parser": "^5.9.0",
     "bootstrap": "^5.1.3",
     "browser-sync": "^2.27.7",
     "browser-sync-webpack-plugin": "^2.3.0",
     "clean-webpack-plugin": "^4.0.0",
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-vue": "^8.2.0",
+    "eslint-webpack-plugin": "^3.1.1",
     "laravel-mix": "^6.0.39",
+    "laravel-mix-eslint": "^0.2.0",
     "resolve-url-loader": "^4.0.0",
     "sass": "^1.47.0",
-    "sass-loader": "^12.1.0",
+    "sass-loader": "^12.1.0"
+  },
+  "dependencies": {
     "swiper": "^7.4.1"
   }
 }
