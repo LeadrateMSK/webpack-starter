@@ -1,10 +1,10 @@
 {
   "name": "webpack-starter",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Стартовый шаблон Webpack, основанный на laravel-mix",
   "main": "index.js",
   "scripts": {
-    "serve": "npx mix watch",
+    "start": "npx mix watch",
     "prod": "npx mix --production",
     "build": "npx mix"
   },
@@ -32,7 +32,7 @@
     "browser-sync-webpack-plugin": "^2.3.0",
     "clean-webpack-plugin": "^4.0.0",
     "eslint": "^8.2.0",
-    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-vue": "^8.2.0",
