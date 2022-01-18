@@ -23,13 +23,9 @@ mix.options({
 });
 
 mix.js('src/js/app.js', 'js')
-    //.vue()
+    .vue()
     .sass('src/styles/app.scss', 'css')
     .sourceMaps()
-    //.eslint({
-    //    fix: true,
-    //    extensions: ['js']
-    //})
     .copyDirectory('src/*.html', 'dist')
     .copyDirectory('src/fonts', 'dist/fonts')
     .copyDirectory('src/img', 'dist/img')
