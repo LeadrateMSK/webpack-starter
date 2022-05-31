@@ -1,15 +1,12 @@
-@use "sass:math";
-
 /**
  * PX to VW
  * @param  float $px-vw - пиксели, которые преобразуем в vw
  * @param  float $base-vw: xl - ширина экрана по-умолчанию
  * @return float - значение vw
  */
-@function vw($px-vw, $base-vw: #{map-get($breakpoints, xl)}) {
+@function vw($px-vw, $base-vw: map-get($breakpoints, xl)) {
   @return ($px-vw * 100vw) / $base-vw;
 }
-
 
 /**
  * PX to REM
@@ -17,9 +14,8 @@
  * @return float - значение rem
  */
 @function rem($px-rem) {
-  @return math.div($px-rem, 16px) + rem;
+  @return $px-rem / 16px + rem;
 }
-
 
 /**
  * Helper for @media
@@ -28,4 +24,18 @@
  */
 @function screen($breakpoint) {
   @return map-get($breakpoints, $breakpoint);
+}
+
+/**
+ * Helper for @function screen
+ */
+@function maxScreen($breakpoint) {
+  @return "max-width: " + map-get($breakpoints, $breakpoint);
+}
+
+/**
+ * Helper for @function screen
+ */
+@function minScreen($breakpoint) {
+  @return "min-width: " + (map-get($breakpoints, $breakpoint)) + 1px;
 }
