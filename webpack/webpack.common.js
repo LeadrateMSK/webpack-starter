@@ -1,51 +1,51 @@
 const Path = require('path');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: {
-        app: Path.resolve(__dirname, '../src/scripts/index.js'),
+  entry: {
+    app: Path.resolve(__dirname, '../src/js/index.js'),
+  },
+  output: {
+    path: Path.join(__dirname, '../dist'),
+    filename: 'js/[name].js',
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      name: false,
     },
-    output: {
-        path: Path.join(__dirname, '../build'),
-        filename: 'js/[name].js',
+  },
+  plugins: [
+    new CleanWebpackPlugin(),
+    new CopyWebpackPlugin({
+      patterns: [{ from: Path.resolve(__dirname, '../public'), to: 'public' }],
+    }),
+    new HtmlWebpackPlugin({
+      template: Path.resolve(__dirname, '../src/index.html'),
+    }),
+  ],
+  resolve: {
+    alias: {
+      '~': Path.resolve(__dirname, '../src'),
     },
-    optimization: {
-        splitChunks: {
-            chunks: 'all',
-            name: false,
-        },
-    },
-    plugins: [
-        new CleanWebpackPlugin(),
-        new CopyWebpackPlugin({
-            patterns: [{from: Path.resolve(__dirname, '../public'), to: 'public'}],
-        }),
-        new HtmlWebpackPlugin({
-            template: Path.resolve(__dirname, '../src/index.html'),
-        }),
+  },
+  module: {
+    rules: [
+      {
+        test: /\.mjs$/,
+        include: /node_modules/,
+        type: 'javascript/auto',
+      },
+      {
+        test: /\.html$/i,
+        loader: 'html-loader',
+      },
+      {
+        test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
+        type: 'asset'
+      },
     ],
-    resolve: {
-        alias: {
-            '~': Path.resolve(__dirname, '../src'),
-        },
-    },
-    module: {
-        rules: [
-            {
-                test: /\.mjs$/,
-                include: /node_modules/,
-                type: 'javascript/auto',
-            },
-            {
-                test: /\.html$/i,
-                loader: 'html-loader',
-            },
-            {
-                test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
-                type: 'asset'
-            },
-        ],
-    },
+  },
 };
