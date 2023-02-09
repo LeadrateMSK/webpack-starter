@@ -1,0 +1,22 @@
+$font-family-base: "Verdana", sans-serif;
+$font-size-base: 16px;
+$line-height-base: 115%;
+$transition-base: all 150ms ease-out;
+$enable-smooth-scroll: true;
+
+$white: #fff;
+$black: #17191E;
+$dark: #22252D;
+$primary: #4069FF;
+$grey: rgba($white, 0.4);
+
+$breakpoints: (
+  retina: 2560px,
+  xxl: 1920px,
+  xl: 1440px,
+  lg: 1200px,
+  md: 1024px,
+  sm: 768px,
+  xs: 576px,
+  xxs: 280px
+);

@@ -1,31 +1,21 @@
-# Webpack FrontEnd StarterKit
+# Webpack Frontend Starterkit
 
-A lightweight foundation for your next webpack based frontend project.
-
-### Installation
+### Локальная разработка
 
 ```sh
-npm install
+npm run dev
 ```
 
-### Start Dev Server
-
-```sh
-npm start
-```
-
-### Build Prod Version
+### Сборка продакшена
 
 ```sh
 npm run build
 ```
 
-### Features:
+### Включено:
 
-- Editorconfig
-- ES6 Support via [babel](https://babeljs.io/) (v7)
-- JavaScript Linting via [eslint](https://eslint.org/)
-- SASS Support via [sass-loader](https://github.com/jtangelder/sass-loader)
-- Autoprefixing of browserspecific CSS rules via [postcss](https://postcss.org/) and [postcss-preset-env](https://github.com/csstools/postcss-preset-env)
-
-When you run `npm run build` we use the [mini-css-extract-plugin](https://github.com/webpack-contrib/mini-css-extract-plugin) to move the css to a separate file. The css file gets included in the head of the `index.html`.
+- Поддержка ES6 с [babel](https://babeljs.io/) (v7)
+- Линтинг JS с [eslint](https://eslint.org/)
+- Поддержка SASS с [sass-loader](https://github.com/jtangelder/sass-loader)
+- Автопрефиксы CSS правил с [postcss](https://postcss.org/) and [postcss-preset-env](https://github.com/csstools/postcss-preset-env)
+- Линтинг стилей с [stylelint](https://stylelint.io/)

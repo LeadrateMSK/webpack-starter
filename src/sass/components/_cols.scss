@@ -1,0 +1,7 @@
+.cols-4 {
+  @include cols(4, 30px);
+
+  @media (#{ maxScreen(xs) }) {
+    @include cols(2, 15px);
+  }
+}

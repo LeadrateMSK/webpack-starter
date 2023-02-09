@@ -1,0 +1,56 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  @if $enable-smooth-scroll {
+    scroll-behavior: smooth;
+  }
+
+  font-size: $font-size-base;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: $font-family-base;
+  line-height: $line-height-base;
+  color: $white;
+  background-color: $black;
+  overflow-x: hidden;
+  height: auto;
+  min-width: screen(xxs);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+a,
+a:active,
+a:hover {
+  text-decoration: none;
+  color: $white;
+}
+
+button {
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+img {
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
